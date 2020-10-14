@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Scratch Statique vers Statique</title>
+	<link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+	<div id="content">
+		<div id="ratio-container" class="ratio-container">
+			<div id="screen-2_image" class="full screen-2_image"></div>
+			<canvas id="canvas"></canvas>
+			<div id="intro-cta" class="full intro-cta"></div>
+		</div>
+	</div>
+
+	<script>
+
+
+		var img = document.getElementById('content');
+
+		// Obican klik event na <div id="img"> koji govori parentu da ce uspostaviti safe komunikaciju sa njim
+		img.addEventListener('click', function () {
+				console.log('clicked')
+
+			parent.postMessage("Hello parent!", "*");
+		});
+
+
+	</script>
+
+	<script src="scripts/config.js"></script>
+	<script src="scripts/ga.js"></script>
+	<script src="scripts/main.js"></script>
+</body>
+
+</html>

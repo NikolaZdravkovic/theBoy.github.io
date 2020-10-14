@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+body {
+    opacity: 0;
+}
+
+#content{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.ratio-container {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.intro-cta {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-size: 35%;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-animation: shake 1s ease 4;
+            animation: shake 1s ease 4;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-transition: .5s opacity linear;
+            transition: .5s opacity linear;
+}
+
+@-webkit-keyframes shake {
+    0%, 90% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    10%, 30%, 50%, 70% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0);
+    }
+
+    20%, 40%, 60%, 80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0);
+    }
+}
+
+@keyframes shake {
+    0%, 90% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    10%, 30%, 50%, 70% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0);
+    }
+
+    20%, 40%, 60%, 80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0);
+    }
+}
+
+.full {
+    position: absolute;
+    /*top: 0;*/
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.screen-2_image {
+    background-image: url(../assets/screen-2_image_portrait.jpg);
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+}
+
+@media all and (orientation: landscape) {
+    .screen-2_image.landscape-enabled {
+        background-image: url(../assets/screen-2_image_landscape.jpg);
+    }
+}
+
+#canvas{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+    -webkit-transition: 1s opacity linear;
+            transition: 1s opacity linear;		
+    width: auto;
+    height: auto;
+    border: 10px solid black;
+}
+
+.fadeOut{
+    opacity: 0;
+    pointer-events: none;
+}
